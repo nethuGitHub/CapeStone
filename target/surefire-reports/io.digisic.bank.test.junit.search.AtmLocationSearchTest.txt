@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: io.digisic.bank.test.junit.search.AtmLocationSearchTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 1.954 s <<< FAILURE! - in io.digisic.bank.test.junit.search.AtmLocationSearchTest
+positiveResultTest  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+
+zeroResultTest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class groovy.lang.GroovySystem
+
+unavilableServiceTest  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class groovy.lang.GroovySystem
+
