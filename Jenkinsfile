@@ -16,21 +16,15 @@ pipeline{
         }
         stage('Test'){
             steps{
-                     sh 'mvn test'
+                     sh 'mvn clean test'
                      junit '**/target/surefire-reports/TEST-*.xml'
             }
         }
         stage('Package'){
             steps{
-                sh 'mvn package'
+                sh 'mvn clean package'
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
                 }
         }
-        stage('Reports'){
-            steps{
-                sh 'mvn verify'
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])     
-                }
-        }   
     }
 }
