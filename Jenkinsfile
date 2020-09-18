@@ -19,11 +19,6 @@ pipeline{
                      sh 'mvn clean test'
             }
         }
-        stage('verify'){
-            steps{
-                     sh 'mvn clean verify'
-            }
-        }
         stage('Package'){
             steps{
                 sh 'mvn clean package'
