@@ -29,7 +29,7 @@ pipeline{
                     
 		sh "sudo docker build . -t 118237/Capestone1"
 		sh "sudo docker run -d -p 8087:8080 118237/Capestone1"
-                    
+	    }  
             }
     }
 }
