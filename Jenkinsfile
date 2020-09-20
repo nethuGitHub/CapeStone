@@ -27,7 +27,7 @@ pipeline{
         stage('Deploy'){
             steps{
                     
-		sh "sudo docker image build -t 118237/capestone4 ./"
+		sh "docker image build -t 118237/capestone4 ./"
 		sh "docker run -d -p 8081:8080 118237/Capestone4"
 	    }  
             }
