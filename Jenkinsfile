@@ -22,6 +22,7 @@ pipeline{
         stage('Package'){
             steps{
                 sh 'mvn clean package'
+                COPY ./target/digitalbank-2.1.0.local.war ./home/ubuntu
                 }
         }
     }
