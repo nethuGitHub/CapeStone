@@ -22,7 +22,6 @@ pipeline{
         stage('Package'){
             steps{
                 sh 'mvn clean package'
-                sh 'docker cp magical_goldwasser:./target/digitalbank-2.1.0.local.war ./home/ubuntu'
                 }
         }
     }
