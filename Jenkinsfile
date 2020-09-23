@@ -23,6 +23,7 @@ pipeline{
             steps{
                 sh 'mvn clean package'
                 }
+	}
          stage('Deploy'){
             steps{
 		        sh 'scp /var/jenkins_home/workspace/CapstoneBuildWar/target/bank##2.1.0.local.war 7c23ef4c50a4:/usr/local/tomcat/webapps/'
