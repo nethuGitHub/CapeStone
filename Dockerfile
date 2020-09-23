@@ -1,5 +1,19 @@
+FROM tomcat
 
-FROM tomcat:8.0
-MAINTAINER 118237
-# COPY path-to-your-application-war path-to-webapps-in-docker-tomcat
-COPY ./var/jenkins_home/workspace/CapstoneBuildWar/target/bank##2.1.0.local.war /usr/local/tomcat/webapps/
+MAINTAINER Nethaji
+
+RUN mkdir /opt/tomcat/
+
+WORKDIR /opt/tomcat
+RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+RUN tar xvfz apache*.tar.gz
+RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
+RUN yum -y install java
+RUN java -version
+
+WORKDIR /opt/tomcat/webapps
+RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+
+EXPOSE 8080
+
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
